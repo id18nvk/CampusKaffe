@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
 import logo from './assets/logo.png';
 
+import colors from './config/colors';
+
 export default function Header(){
     return(
         <View style={styles.header}>
@@ -14,7 +16,7 @@ const styles = StyleSheet.create({
     header: {
         width: '100%',
         height: 50,
-        backgroundColor: '#3B555D',
+        backgroundColor: colors.primaryBlue,
         alignItems: 'center',
         justifyContent: 'center'
     },

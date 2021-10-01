@@ -12,6 +12,8 @@ import Footer from './Footer';
 import { navigationRef } from './RootNavigation';
 import { SafeAreaView, StyleSheet } from 'react-native';
 
+import colors from './config/colors';
+
 
 
 const Stack = createStackNavigator();
@@ -74,7 +76,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#3B555D'
+    backgroundColor: colors.primaryBlue,
   },
 });
 
