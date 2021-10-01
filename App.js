@@ -25,7 +25,7 @@ export default function App() {
     >
       <Stack.Navigator 
         initialRouteName="Campuskaffe"
-        headerMode="screen"
+        headerMode="float"
       >
         
         <Stack.Screen 
