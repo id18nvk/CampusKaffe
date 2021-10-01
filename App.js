@@ -8,6 +8,7 @@ import { Platform, View } from 'react-native';
 import { AppLoading } from 'expo';
 import Header from './Header';
 import Footer from './Footer';
+import Map from './Map';
 //import Alla sidor
 import { navigationRef } from './RootNavigation';
 
@@ -24,7 +25,7 @@ export default function App() {
       ref={navigationRef}
     >
       <Stack.Navigator 
-        initialRouteName="Campuskaffe"
+        initialRouteName="Map"
         headerMode="float"
       >
         
@@ -45,14 +46,14 @@ export default function App() {
         }}
         />*/}
 
-        {/* Lägg till kartvy 
+        
         <Stack.Screen 
           name="Map"
           component={Map}
         options={{
           header: () => <Header headerDisplay="Kartvy" />
         }}
-        />*/}
+        />
 
         {/* Lägg till "lägg till kaffe"
         <Stack.Screen 

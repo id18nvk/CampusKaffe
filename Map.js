@@ -1,11 +1,11 @@
 import React, {useEffect, useEffects, useState} from 'react';
 import {StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Image, ScrollView } from 'react-native';
 
-export default function Map({route, navigation}) {
+export default function Map() {
     const [dataLoading, finishLoading] = useState(true);
-    const [allPostsData, setAllPostData] = useState([]);
+    {/*const [allPostsData, setAllPostData] = useState([]);
     const {url} = route.params;
-    const selectedPost = allPostData.find(post => post.url === url);
+    const selectedPost = allPostData.find(post => post.url === url);*/}
 
     useEffect(() => {
         fetch('https://use.mazemap.com/?campusid=289')
