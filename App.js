@@ -31,9 +31,9 @@ export default function App() {
         <Stack.Screen 
           name="Campuskaffe"
           component={Homepage}
-        /*options={{
+        options={{
           header: () => <Header headerDisplay="Campuskaffe" />
-        }}*/
+        }}
         />
 
         {/* Lägg till listvy
