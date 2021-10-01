@@ -11,6 +11,7 @@ import Footer from './Footer';
 import Map from './Map';
 //import Alla sidor
 import { navigationRef } from './RootNavigation';
+import { SafeAreaView, StyleSheet } from 'react-native';
 
 
 
@@ -21,6 +22,7 @@ export default function App() {
   //Lägg en if/else-sats här om något behöver laddas in
   //innan appen kan starta 
   return (
+    <SafeAreaView style={styles.container}>
     <NavigationContainer 
       ref={navigationRef}
     >
@@ -67,7 +69,14 @@ export default function App() {
       </Stack.Navigator>
      {/* <Footer />*/}
     </NavigationContainer>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#3B555D'
+  },
+});
 
 
