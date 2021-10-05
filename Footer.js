@@ -7,15 +7,17 @@ import colors from './config/colors';
 
 
 export default function Footer() {
+    return (
     <View style={styles.footer}>
         <TouchableOpacity style={styles.button} onPress={() => RootNavigation.navigate('CampusKaffe')}>
-            <Icon 
+            {/*<Icon 
             name='map-outline'
-            type='ionicon'/>
+            type='ionicon'/>*/}
+            <Text>Hej</Text>
         </TouchableOpacity>
 
     </View>
-
+    );
 }
 
 const styles = StyleSheet.create({
@@ -24,6 +26,9 @@ const styles = StyleSheet.create({
         height: 80,
         flexDirection: 'row',
         alignItems: 'flex-start',
-
+        justifyContent: 'center'
+    },
+    button: {
+        padding: 20
     }
 });
