@@ -29,7 +29,7 @@ export default function App() {
       ref={navigationRef}
     >
       <Stack.Navigator 
-        initialRouteName="Map"
+        initialRouteName="Campuskaffe"
         headerMode="float"
       >
         
