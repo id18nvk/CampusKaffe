@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, Dimensions, Image, TouchableWithoutFeedback } from 'react-native';
 import Modal from "react-native-modalbox";
 import direction from './assets/direction.png';
+import dollar from './assets/dollar.png';
 
 
 const {width, height } = Dimensions.get("window");
@@ -20,11 +21,22 @@ export default function PopUpShop() {
           onClosed={() => setModalVisible(false)}
         >
           <View style={styles.content}>
+            
+            <View style={{ height: 5, backgroundColor: '#F5EEDC' }}/>
+            <View style={styles.hairline} />
+
             <Text style={styles.textStyle}>Kårfiket Mitum</Text>
             <Text style={styles.textStyle2}>ÖPPET - Stänger 14:30</Text>
-            <Text style={styles.textStyle3}>Kaffe från 12 kr</Text>
-            <Text style={styles.textStyle3}>Teknikhuset, Plan 1, Sal 103 </Text>
-            <Image style={styles.imageStyle} source={direction} style={{width: 39, height: 39 }}/>
+            
+            <View style={styles.flexBox}>
+              <Image style={styles.image} source={dollar} style={{width: 13, height: 13 }}/>
+              <Text style={styles.textStyle4}>Kaffe från 12 kr</Text>
+            </View>
+
+            <View style={styles.flexBox}>
+              <Text style={styles.textStyle4}>Teknikhuset, Plan 1, Sal 103 </Text>
+              <Image style={styles.image} source={direction} style={{width: 39, height: 39 }}/>
+            </View>
           </View>
         </Modal>
       );
@@ -56,9 +68,9 @@ const styles = StyleSheet.create({
   },
   content: {
     position: "absolute",
-    bottom: 0,
+    bottom: 80,
     width,
-    height: 400,
+    height: 330,
     borderTopLeftRadius: 20,
     justifyContent: "flex-start",
     alignItems: "center",
@@ -72,18 +84,29 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   textStyle2: {
-    fontSize: 17,
+    fontSize: 15,
     color: '#F5EEDC',
-    padding: 10,
+    padding: 0,
    
   },
-  textStyle3: {
+  textStyle4: {
     fontSize: 17,
     color: '#F5EEDC',
-    padding: 30,
-    
+    padding: 5,
   },
-  imageStyle: {
-    
-  }
+  flexBox: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 30,
+  },
+  hairline: {
+    backgroundColor: '#F5EEDC',
+    height: 3,
+    width: 80,
+    paddingTop: 0,
+    borderRadius: 5,
+  },
+  
 });
