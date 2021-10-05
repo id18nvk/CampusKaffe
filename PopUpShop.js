@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   content: {
     position: "absolute",
-    bottom: 0,
+    bottom: 80,
     width,
     height: 400,
     borderTopLeftRadius: 20,
@@ -84,6 +84,6 @@ const styles = StyleSheet.create({
     
   },
   imageStyle: {
-    
+    float: 'right',
   }
 });
