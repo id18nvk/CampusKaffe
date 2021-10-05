@@ -4,6 +4,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Homepage from './Home';
+import Map from './Map';
+
 import { Platform, View } from 'react-native';
 import { AppLoading } from 'expo';
 import Header from './Header';
@@ -27,7 +29,7 @@ export default function App() {
       ref={navigationRef}
     >
       <Stack.Navigator 
-        initialRouteName="Campuskaffe"
+        initialRouteName="Map"
         headerMode="float"
       >
         
@@ -39,14 +41,13 @@ export default function App() {
         }}
         />
 
-        {/* Lägg till listvy
         <Stack.Screen 
-          name="Campuskaffe"
-          component={Homepage}
+          name="Map"
+          component={Map}
         options={{
           header: () => <Header headerDisplay="Listvy" />
         }}
-        />*/}
+        />
 
         {/* Lägg till kartvy 
         <Stack.Screen 
