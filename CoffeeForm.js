@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, Component} from 'react';
 import { StyleSheet, Text, View, 
     ScrollView} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
+import ReactNativeItemSelect from 'react-native-item-select';
 
 export default function CoffeeForm() {
 
@@ -35,6 +36,26 @@ export default function CoffeeForm() {
                 <Text style={styles.label2}>
                     Vad erbjuds mer än kaffe?
                 </Text>
+                <ReactNativeItemSelect
+                    data={[
+                        { name: 'Mjölk' },
+                        { name: 'Havremjölk'},
+                        { name: 'Godis' },
+                        { name: 'Tävling' },
+                        { name: 'Produkter' },
+                        { name: 'Fika' }
+                    ]}
+                    //itemComponent={this.itemComponent}
+                    //onSubmit={this.onSubmit}
+                    styles={
+                        {
+                            btn: { backgroundColor: '#2196F3' },
+                            disabledBtn: { backgroundColor: '#2196F3' },
+                            tickTxt: { backgroundColor: '#2196F3' },
+                            activeItemBoxHighlight: { borderColor: '#2196F3' },
+                        }
+                    }
+                />
 
                 <Text style={styles.label2}>
                     Var finns det?
@@ -55,7 +76,7 @@ export default function CoffeeForm() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#3B555D',
         alignItems: 'center',
         justifyContent: 'center'
     },

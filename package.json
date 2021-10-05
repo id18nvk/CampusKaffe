@@ -18,6 +18,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
     "react-native-dropdown-picker": "^5.1.28",
     "react-native-gesture-handler": "~1.10.2",
+    "react-native-item-select": "^0.3.0",
     "react-native-modalbox": "1.7.1",
     "react-native-reanimated": "~2.2.0",
     "react-native-safe-area-context": "3.2.0",

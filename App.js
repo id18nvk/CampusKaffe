@@ -35,7 +35,7 @@ export default function App() {
         
         <Stack.Screen 
           name="Campuskaffe"
-          component={Homepage}
+          component={CoffeeForm}
         options={{
           header: () => <Header headerDisplay="Campuskaffe" />
         }}
