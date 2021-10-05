@@ -15,6 +15,7 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 
 import colors from './config/colors';
 import PopUpShop from './PopUpShop';
+import CoffeeForm from './CoffeeForm';
 
 
 
@@ -29,7 +30,7 @@ export default function App() {
       ref={navigationRef}
     >
       <Stack.Navigator 
-        initialRouteName="PopUpShop"
+        initialRouteName="Campuskaffe"
         headerMode="float"
       >
         
@@ -75,7 +76,7 @@ export default function App() {
         />*/}
 
       </Stack.Navigator>
-     {/* <Footer />*/}
+     <Footer />
     </NavigationContainer>
   );
 }
