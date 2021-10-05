@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import * as RootNavigation from './RootNavigation';
-import { Icon } from 'react-native-vector-icons';
 
 import colors from './config/colors';
 
@@ -10,10 +9,11 @@ export default function Footer() {
     return (
     <View style={styles.footer}>
         <TouchableOpacity style={styles.button} onPress={() => RootNavigation.navigate('CampusKaffe')}>
-            {/*<Icon 
-            name='map-outline'
-            type='ionicon'/>*/}
             <Text>Hej</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button}>
+            <Text>Då</Text>
         </TouchableOpacity>
 
     </View>
