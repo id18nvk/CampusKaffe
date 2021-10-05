@@ -84,6 +84,6 @@ const styles = StyleSheet.create({
     
   },
   imageStyle: {
-    float: 'right',
+    
   }
 });
