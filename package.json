@@ -20,7 +20,8 @@
     "react-native-gesture-handler": "~1.10.2",
     "react-native-screens": "~3.4.0",
     "react-native-safe-area-context": "3.2.0",
-    "@react-native-community/masked-view": "0.1.10"
+    "@react-native-community/masked-view": "0.1.10",
+    "react-native-modalbox": "1.7.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
