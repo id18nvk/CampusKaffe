@@ -17,6 +17,7 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 
 import colors from './config/colors';
 import PopUpShop from './PopUpShop';
+import PopUpFree from './PopUpFree';
 import CoffeeForm from './CoffeeForm';
 
 
@@ -65,6 +66,13 @@ export default function App() {
         }}
       />*/}
         
+        <Stack.Screen 
+          name="PopUpFree"
+          component={PopUpFree}
+        options={{
+          header: () => <Header headerDisplay="PopUpShop" />
+        }}
+        />
 
         {/* Lägg till "lägg till kaffe"
         <Stack.Screen 
