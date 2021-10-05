@@ -10,11 +10,14 @@ import { Platform, View } from 'react-native';
 import { AppLoading } from 'expo';
 import Header from './Header';
 import Footer from './Footer';
+
 //import Alla sidor
 import { navigationRef } from './RootNavigation';
 import { SafeAreaView, StyleSheet } from 'react-native';
 
 import colors from './config/colors';
+import PopUpShop from './PopUpShop';
+import CoffeeForm from './CoffeeForm';
 
 
 
@@ -48,15 +51,14 @@ export default function App() {
           header: () => <Header headerDisplay="Listvy" />
         }}
         />
-
-        {/* Lägg till kartvy 
         <Stack.Screen 
-          name="Map"
-          component={Map}
+          name="PopUpShop"
+          component={PopUpShop}
         options={{
-          header: () => <Header headerDisplay="Kartvy" />
+          header: () => <Header headerDisplay="PopUpShop" />
         }}
-        />*/}
+        />
+        
 
         {/* Lägg till "lägg till kaffe"
         <Stack.Screen 
@@ -68,7 +70,7 @@ export default function App() {
         />*/}
 
       </Stack.Navigator>
-     {/* <Footer />*/}
+     <Footer />
     </NavigationContainer>
   );
 }
