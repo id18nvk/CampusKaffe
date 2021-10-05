@@ -3,13 +3,13 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Homepage from './Home';
 import Map from './Map';
 
 import { Platform, View } from 'react-native';
 import { AppLoading } from 'expo';
 import Header from './Header';
-import Footer from './Footer';
 
 //import Alla sidor
 import { navigationRef } from './RootNavigation';
@@ -23,7 +23,16 @@ import CoffeeForm from './CoffeeForm';
 
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
+function Home() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Map" component={Map} />
+      <Tab.Screen name="PopUpShop" component={PopUpShop} />
+    </Tab.Navigator>
+  );
+}
 
 export default function App() {
   //Lägg en if/else-sats här om något behöver laddas in
@@ -33,7 +42,7 @@ export default function App() {
       ref={navigationRef}
     >
       <Stack.Navigator 
-        initialRouteName="Map"
+        initialRouteName="Home"
         headerMode="float"
       >
         
@@ -46,19 +55,16 @@ export default function App() {
         />
 
         <Stack.Screen 
-          name="Map"
-          component={Map}
-        options={{
-          header: () => <Header headerDisplay="Listvy" />
-        }}
+          name="Home"
+          component={Home}
         />
-        <Stack.Screen 
+        {/*<Stack.Screen 
           name="PopUpShop"
           component={PopUpShop}
         options={{
           header: () => <Header headerDisplay="PopUpShop" />
         }}
-        />
+      />*/}
         
         <Stack.Screen 
           name="PopUpFree"
@@ -78,7 +84,6 @@ export default function App() {
         />*/}
 
       </Stack.Navigator>
-     <Footer />
     </NavigationContainer>
   );
 }

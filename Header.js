@@ -5,11 +5,18 @@ import logo from './assets/logo.png';
 import colors from './config/colors';
 
 export default function Header(){
-    return(
-        <SafeAreaView style={styles.header}>
-            <Image source={logo} style={{width: 160, height: 35, resizeMode: 'contain'}}/>
-        </SafeAreaView>
-    );
+        if (Platform.OS === 'android') {
+            return(            
+                <View style={styles.header}>
+                    <Image source={logo} style={{width: 160, height: 35, resizeMode: 'contain'}}/>
+                </View>);
+        } else {
+            return(
+                <SafeAreaView style={styles.header}>
+                    <Image source={logo} style={{width: 160, height: 35, resizeMode: 'contain'}}/>
+                </SafeAreaView>
+            );
+        }
 }
 
 const styles = StyleSheet.create({
