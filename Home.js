@@ -6,7 +6,7 @@ export default function Homepage() {
         <View style={styles.container}>
             <Text>Detta är Homepage</Text>
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -16,4 +16,4 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     }
-})
+});
