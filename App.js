@@ -23,7 +23,6 @@ export default function App() {
   //Lägg en if/else-sats här om något behöver laddas in
   //innan appen kan starta 
   return (
-    <SafeAreaView style={styles.container}>
     <NavigationContainer 
       ref={navigationRef}
     >
@@ -70,7 +69,6 @@ export default function App() {
       </Stack.Navigator>
      {/* <Footer />*/}
     </NavigationContainer>
-    </SafeAreaView>
   );
 }
 
