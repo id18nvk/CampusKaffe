@@ -2459,7 +2459,15 @@
     "js-yaml" "^3.13.1"
     "parse-json" "^4.0.0"
 
+<<<<<<< HEAD
 "create-react-class@^15.6.2":
+=======
+<<<<<<< HEAD
+"create-react-class@^15.6.0", "create-react-class@^15.6.2":
+=======
+"create-react-class@^15.6.2":
+>>>>>>> f5a359d7e7949821ad373156bd160fbf29d403bd
+>>>>>>> 4cd5fbef2dbea19f13daf957416deaaa7ce71016
   "integrity" "sha512-QZv4sFWG9S5RUvkTYWbflxeZX+JG7Cz0Tn33rQBJ+WFQTqTfUTjMjiv9tnfXazjsO5r0KhPs+AqCjyrQX6h2ng=="
   "resolved" "https://registry.npmjs.org/create-react-class/-/create-react-class-15.7.0.tgz"
   "version" "15.7.0"
@@ -3018,11 +3026,14 @@
   dependencies:
     "escape-string-regexp" "^1.0.5"
 
+<<<<<<< HEAD
+=======
 "file-uri-to-path@1.0.0":
   "integrity" "sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw=="
   "resolved" "https://registry.npmjs.org/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz"
   "version" "1.0.0"
 
+>>>>>>> 4cd5fbef2dbea19f13daf957416deaaa7ce71016
 "fill-range@^4.0.0":
   "integrity" "sha1-1USBHUKPmOsGpj3EAtJAPDKMOPc="
   "resolved" "https://registry.npmjs.org/fill-range/-/fill-range-4.0.0.tgz"
@@ -3170,6 +3181,8 @@
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
+<<<<<<< HEAD
+=======
 "fsevents@^1.2.7":
   "integrity" "sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw=="
   "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-1.2.13.tgz"
@@ -3178,6 +3191,7 @@
     "bindings" "^1.5.0"
     "nan" "^2.12.1"
 
+>>>>>>> 4cd5fbef2dbea19f13daf957416deaaa7ce71016
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
   "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -4389,11 +4403,14 @@
     "object-assign" "^4.0.1"
     "thenify-all" "^1.0.0"
 
+<<<<<<< HEAD
+=======
 "nan@^2.12.1":
   "integrity" "sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ=="
   "resolved" "https://registry.npmjs.org/nan/-/nan-2.15.0.tgz"
   "version" "2.15.0"
 
+>>>>>>> 4cd5fbef2dbea19f13daf957416deaaa7ce71016
 "nanocolors@^0.1.5":
   "integrity" "sha512-2nMHqg1x5PU+unxX7PGY7AuYxl2qDx7PSrTRjizr8sxdd3l/3hBuWWaki62qmtYm2U5i4Z5E7GbjlyDFhs9/EQ=="
   "resolved" "https://registry.npmjs.org/nanocolors/-/nanocolors-0.1.12.tgz"
@@ -4848,7 +4865,15 @@
   dependencies:
     "asap" "~2.0.6"
 
+<<<<<<< HEAD
 "prop-types@^15.6.0", "prop-types@^15.6.2", "prop-types@^15.7.2":
+=======
+<<<<<<< HEAD
+"prop-types@^15.5.10", "prop-types@^15.6.0", "prop-types@^15.6.2", "prop-types@^15.7.2":
+=======
+"prop-types@^15.6.0", "prop-types@^15.6.2", "prop-types@^15.7.2":
+>>>>>>> f5a359d7e7949821ad373156bd160fbf29d403bd
+>>>>>>> 4cd5fbef2dbea19f13daf957416deaaa7ce71016
   "integrity" "sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
   "version" "15.7.2"
@@ -4938,6 +4963,14 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   "version" "17.0.2"
 
+<<<<<<< HEAD
+"react-native-dropdown-picker@^5.1.28":
+  "integrity" "sha512-REF1QMuuJhVrNh71IvgCY594wT6+l4KQG8TRgwPUfvnWPukzbNHClGkqf6E7Y7xZS5eK6NeE1uAzoZZJntdwWA=="
+  "resolved" "https://registry.npmjs.org/react-native-dropdown-picker/-/react-native-dropdown-picker-5.1.28.tgz"
+  "version" "5.1.28"
+
+=======
+>>>>>>> 4cd5fbef2dbea19f13daf957416deaaa7ce71016
 "react-native-gesture-handler@*", "react-native-gesture-handler@>= 1.0.0", "react-native-gesture-handler@~1.10.2":
   "integrity" "sha512-cBGMi1IEsIVMgoox4RvMx7V2r6bNKw0uR1Mu1o7NbuHS6BRSVLq0dP34l2ecnPlC+jpWd3le6Yg1nrdCjby2Mw=="
   "resolved" "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz"
@@ -4949,6 +4982,20 @@
     "invariant" "^2.2.4"
     "prop-types" "^15.7.2"
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+"react-native-modalbox@1.7.1":
+  "integrity" "sha512-Jqn12MKQaT5OSb1uMAEeDQF02xHS+WWdgKl55ecoIknrDy+FIoC3fXHMEoRZH6agADDg9eVBqx8w+P7+EwXTbQ=="
+  "resolved" "https://registry.npmjs.org/react-native-modalbox/-/react-native-modalbox-1.7.1.tgz"
+  "version" "1.7.1"
+  dependencies:
+    "create-react-class" "^15.6.0"
+    "prop-types" "^15.5.10"
+
+=======
+>>>>>>> f5a359d7e7949821ad373156bd160fbf29d403bd
+>>>>>>> 4cd5fbef2dbea19f13daf957416deaaa7ce71016
 "react-native-reanimated@~2.2.0":
   "integrity" "sha512-Lfv4ogbNLU9x3DqhXUFza9pnzyTvPrw5xGC1wWA6aGXqZgyaikNLgC5dNWzxVbfEwRdOuLPFsai3LAcIM92TCg=="
   "resolved" "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-2.2.2.tgz"
