@@ -21,6 +21,7 @@
     "react-native-modalbox": "1.7.1",
     "react-native-reanimated": "~2.2.0",
     "react-native-safe-area-context": "3.2.0",
+    "react-native-screens": "^3.8.0",
     "react-native-web": "^0.17.5"
   },
   "devDependencies": {

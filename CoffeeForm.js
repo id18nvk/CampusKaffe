@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
     dropDown: {
         backgroundColor: '#F5EEDC',
         height: 40,
-        justifycontent: 'left',
         alignItems: 'left',
         borderRadius: 4, 
         width: "90%",
