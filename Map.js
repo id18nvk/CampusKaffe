@@ -1,28 +1,30 @@
-import React, {useEffect, useEffects, useState} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Image, ScrollView } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
+
 
 export default function Map() {
-    const [dataLoading, finishLoading] = useState(true);
-    {/*const [allPostsData, setAllPostData] = useState([]);
-    const {url} = route.params;
-    const selectedPost = allPostData.find(post => post.url === url);*/}
-
-    useEffect(() => {
-        fetch('https://use.mazemap.com/?campusid=289')
-    .catch((error) => console.error(error))
-    .finally(() => finishLoading(false));
-    }, []);
-
-    return(
-        <View style={StyleSheet.container}>
-          {/*  <TouchableOpacity
-             </View>   style={StyleSheet.button}
-                onPress={() => navigation.goBack()}>
+    return (
+      
+        <MapView
+        style={{ flex: 1 }}
+        provider={PROVIDER_GOOGLE}
+        showsUserLocation
+        initialRegion={{
+        latitude: 63.8195311,
+        longitude: 20.3077981,
+        latitudeDelta: 0.00015,
+        longitudeDelta: 0.0020}}
+        >
+            <Marker 
+            coordinate={{ latitude: 63.8195311, longitude: 20.307981}} 
+            title={"gott kaffe"}>
                 
-                <Text style={styles.buttontext}>Lägg till kaffeställe</Text>
-          </TouchableOpacity>*/}
-            {}
-        </View>
+            </Marker>
+        </MapView>
+   
+      
     );
-
 }
+
+

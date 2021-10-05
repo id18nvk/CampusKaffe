@@ -4,16 +4,19 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Homepage from './Home';
+import Map from './Map';
+
 import { Platform, View } from 'react-native';
 import { AppLoading } from 'expo';
 import Header from './Header';
 import Footer from './Footer';
-import Map from './Map';
+
 //import Alla sidor
 import { navigationRef } from './RootNavigation';
 import { SafeAreaView, StyleSheet } from 'react-native';
 
 import colors from './config/colors';
+import PopUpShop from './PopUpShop';
 import CoffeeForm from './CoffeeForm';
 
 
@@ -29,7 +32,7 @@ export default function App() {
       ref={navigationRef}
     >
       <Stack.Navigator 
-        initialRouteName="Campuskaffe"
+        initialRouteName="Map"
         headerMode="float"
       >
         
@@ -41,23 +44,21 @@ export default function App() {
         }}
         />
 
-        {/* Lägg till listvy
-        <Stack.Screen 
-          name="Campuskaffe"
-          component={Homepage}
-        options={{
-          header: () => <Header headerDisplay="Listvy" />
-        }}
-        />*/}
-
-        
         <Stack.Screen 
           name="Map"
           component={Map}
         options={{
-          header: () => <Header headerDisplay="Kartvy" />
+          header: () => <Header headerDisplay="Listvy" />
         }}
         />
+        <Stack.Screen 
+          name="PopUpShop"
+          component={PopUpShop}
+        options={{
+          header: () => <Header headerDisplay="PopUpShop" />
+        }}
+        />
+        
 
         {/* Lägg till "lägg till kaffe"
         <Stack.Screen 

@@ -1,9 +1,9 @@
 import React, {useState, Component} from 'react';
-import { StyleSheet, Text, View, 
+import { StyleSheet, Text, View , CheckBox, 
     ScrollView} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
+import { FlatList } from 'react-native-gesture-handler';
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
-import ReactNativeItemSelect from 'react-native-item-select';
 
 export default function CoffeeForm() {
 
@@ -14,7 +14,8 @@ export default function CoffeeForm() {
         {label: 'Sveriges Ingenjörer', value: 'SverigesIngenjorer'},
         {label: 'Unionen', value: 'Unionen'}
     ]);
-
+    const [isSelected, setSelection] = useState(false);
+    const [flexDirection, setflexDirection] = useState("column");
 
     return(
         <View style={styles.container}>
@@ -36,27 +37,57 @@ export default function CoffeeForm() {
                 <Text style={styles.label2}>
                     Vad erbjuds mer än kaffe?
                 </Text>
-                <ReactNativeItemSelect
-                    data={[
-                        { name: 'Mjölk' },
-                        { name: 'Havremjölk'},
-                        { name: 'Godis' },
-                        { name: 'Tävling' },
-                        { name: 'Produkter' },
-                        { name: 'Fika' }
-                    ]}
-                    //itemComponent={this.itemComponent}
-                    //onSubmit={this.onSubmit}
-                    styles={
-                        {
-                            btn: { backgroundColor: '#2196F3' },
-                            disabledBtn: { backgroundColor: '#2196F3' },
-                            tickTxt: { backgroundColor: '#2196F3' },
-                            activeItemBoxHighlight: { borderColor: '#2196F3' },
-                        }
-                    }
-                />
-
+                
+                
+                <View style={styles.checkboxContainer}>
+                    <CheckBox
+                    value={isSelected}
+                    onValueChange={setSelection}
+                    style={styles.checkbox}
+                    />
+                    <Text style={styles.label}>Mjölk</Text>
+                </View>
+                <View style={styles.checkboxContainer}>
+                    <CheckBox
+                    value={isSelected}
+                    onValueChange={setSelection}
+                    style={styles.checkbox}
+                    />
+                    <Text style={styles.label}>Havremjölk</Text>
+                </View>
+                <View style={styles.checkboxContainer}>
+                    <CheckBox
+                    value={isSelected}
+                    onValueChange={setSelection}
+                    style={styles.checkbox}
+                    />
+                    <Text style={styles.label}>Godis</Text>
+                </View>
+                <View style={styles.checkboxContainer}>
+                    <CheckBox
+                    value={isSelected}
+                    onValueChange={setSelection}
+                    style={styles.checkbox}
+                    />
+                    <Text style={styles.label}>Tävling</Text>
+                </View>
+                <View style={styles.checkboxContainer}>
+                    <CheckBox
+                    value={isSelected}
+                    onValueChange={setSelection}
+                    style={styles.checkbox}
+                    />
+                    <Text style={styles.label}>Produkter</Text>
+                </View>
+                <View style={styles.checkboxContainer}>
+                    <CheckBox
+                    value={isSelected}
+                    onValueChange={setSelection}
+                    style={styles.checkbox}
+                    />
+                    <Text style={styles.label}>Fika</Text>
+                </View>
+                    
                 <Text style={styles.label2}>
                     Var finns det?
                 </Text>
@@ -71,7 +102,6 @@ export default function CoffeeForm() {
             </ScrollView>
         </View>
     );
-
 };
 const styles = StyleSheet.create({
     container: {
@@ -85,21 +115,37 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: "bold",
         textAlign: 'center',
+        paddingBottom: 28,
     },
     label2: {
         color: '#F5EEDC',
         fontSize: 17,
         textAlign: 'left',
+        paddingBottom: 10,
     },
     label3: {
         color: '#F5EEDC',
         fontSize: 13,
         textAlign: 'left',
+        paddingBottom: 13,
+    },
+    label: {
+        color: '#F5EEDC',
+        fontSize: 13,
+        textAlign: 'center',
+        paddingBottom: 21,
     },
     dropDown: {
         backgroundColor: '#F5EEDC',
         height: 40,
         borderRadius: 4, 
-        width: "90%",
-    }
+        width: "100%",
+    },
+    checkboxContainer: {
+        flex: 1,
+        backgroundColor: '#3B555D',
+        alignItems: 'center',
+        justifyContent: 'center'
+
+    },
 })
