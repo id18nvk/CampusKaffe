@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, Dimensions, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, Button, Dimensions, Image, TouchableWithoutFeedback } from 'react-native';
 import Modal from "react-native-modalbox";
+import direction from './assets/direction.png';
 
 
 const {width, height } = Dimensions.get("window");
@@ -20,6 +21,10 @@ export default function PopUpShop() {
         >
           <View style={styles.content}>
             <Text style={styles.textStyle}>Kårfiket Mitum</Text>
+            <Text style={styles.textStyle2}>ÖPPET - Stänger 14:30</Text>
+            <Text style={styles.textStyle3}>Kaffe från 12 kr</Text>
+            <Text style={styles.textStyle3}>Teknikhuset, Plan 1, Sal 103 </Text>
+            <Image style={styles.imageStyle} source={direction} style={{width: 39, height: 39 }}/>
           </View>
         </Modal>
       );
@@ -55,7 +60,7 @@ const styles = StyleSheet.create({
     width,
     height: 400,
     borderTopLeftRadius: 20,
-    justifyContent: "top",
+    justifyContent: "flex-start",
     alignItems: "center",
     borderTopRightRadius: 20,
     backgroundColor: "#3B555D"
@@ -65,5 +70,20 @@ const styles = StyleSheet.create({
     color: '#CA9D7C',
     padding: 10,
     fontWeight: 'bold'
+  },
+  textStyle2: {
+    fontSize: 17,
+    color: '#F5EEDC',
+    padding: 10,
+    fontWeight: 'regular'
+  },
+  textStyle3: {
+    fontSize: 17,
+    color: '#F5EEDC',
+    padding: 30,
+    fontWeight: 'regular'
+  },
+  imageStyle: {
+    
   }
 });
