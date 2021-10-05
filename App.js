@@ -14,6 +14,7 @@ import { navigationRef } from './RootNavigation';
 import { SafeAreaView, StyleSheet } from 'react-native';
 
 import colors from './config/colors';
+import PopUpShop from './PopUpShop';
 
 
 
@@ -28,7 +29,7 @@ export default function App() {
       ref={navigationRef}
     >
       <Stack.Navigator 
-        initialRouteName="Map"
+        initialRouteName="PopUpShop"
         headerMode="float"
       >
         
@@ -48,7 +49,13 @@ export default function App() {
           header: () => <Header headerDisplay="Listvy" />
         }}
         />*/}
-
+        <Stack.Screen 
+          name="PopUpShop"
+          component={PopUpShop}
+        options={{
+          header: () => <Header headerDisplay="PopUpShop" />
+        }}
+        />
         
         <Stack.Screen 
           name="Map"

@@ -2459,11 +2459,7 @@
     "js-yaml" "^3.13.1"
     "parse-json" "^4.0.0"
 
-<<<<<<< HEAD
 "create-react-class@^15.6.0", "create-react-class@^15.6.2":
-=======
-"create-react-class@^15.6.2":
->>>>>>> f5a359d7e7949821ad373156bd160fbf29d403bd
   "integrity" "sha512-QZv4sFWG9S5RUvkTYWbflxeZX+JG7Cz0Tn33rQBJ+WFQTqTfUTjMjiv9tnfXazjsO5r0KhPs+AqCjyrQX6h2ng=="
   "resolved" "https://registry.npmjs.org/create-react-class/-/create-react-class-15.7.0.tgz"
   "version" "15.7.0"
@@ -4852,11 +4848,7 @@
   dependencies:
     "asap" "~2.0.6"
 
-<<<<<<< HEAD
 "prop-types@^15.5.10", "prop-types@^15.6.0", "prop-types@^15.6.2", "prop-types@^15.7.2":
-=======
-"prop-types@^15.6.0", "prop-types@^15.6.2", "prop-types@^15.7.2":
->>>>>>> f5a359d7e7949821ad373156bd160fbf29d403bd
   "integrity" "sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
   "version" "15.7.2"
@@ -4957,7 +4949,6 @@
     "invariant" "^2.2.4"
     "prop-types" "^15.7.2"
 
-<<<<<<< HEAD
 "react-native-modalbox@1.7.1":
   "integrity" "sha512-Jqn12MKQaT5OSb1uMAEeDQF02xHS+WWdgKl55ecoIknrDy+FIoC3fXHMEoRZH6agADDg9eVBqx8w+P7+EwXTbQ=="
   "resolved" "https://registry.npmjs.org/react-native-modalbox/-/react-native-modalbox-1.7.1.tgz"
@@ -4966,8 +4957,6 @@
     "create-react-class" "^15.6.0"
     "prop-types" "^15.5.10"
 
-=======
->>>>>>> f5a359d7e7949821ad373156bd160fbf29d403bd
 "react-native-reanimated@~2.2.0":
   "integrity" "sha512-Lfv4ogbNLU9x3DqhXUFza9pnzyTvPrw5xGC1wWA6aGXqZgyaikNLgC5dNWzxVbfEwRdOuLPFsai3LAcIM92TCg=="
   "resolved" "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-2.2.2.tgz"
