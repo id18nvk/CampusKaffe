@@ -69,7 +69,7 @@ export default function App() {
         />*/}
 
       </Stack.Navigator>
-     {/* <Footer />*/}
+     <Footer />
     </NavigationContainer>
   );
 }
