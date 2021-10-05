@@ -75,13 +75,13 @@ const styles = StyleSheet.create({
     fontSize: 17,
     color: '#F5EEDC',
     padding: 10,
-    fontWeight: 'regular'
+   
   },
   textStyle3: {
     fontSize: 17,
     color: '#F5EEDC',
     padding: 30,
-    fontWeight: 'regular'
+    
   },
   imageStyle: {
     
