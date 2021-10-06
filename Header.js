@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
+import { StyleSheet, View, Image, SafeAreaView } from 'react-native';
 import logo from './assets/logo.png';
 
 import colors from './config/colors';
