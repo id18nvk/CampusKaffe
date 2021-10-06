@@ -6,6 +6,8 @@ import dollar from './assets/dollar.png';
 import milk from './assets/milk.png';
 import godis from './assets/godis.png';
 import varning from './assets/varning.png';
+import colors from './config/colors';
+import { color } from 'react-native-reanimated';
 
 const {width, height } = Dimensions.get("window");
 
@@ -90,35 +92,35 @@ const styles = StyleSheet.create({
   },
   content: {
     position: "absolute",
-    bottom: 80,
+    bottom: 100,
     width,
-    height: 460,
+    height: 500,
     borderTopLeftRadius: 20,
     justifyContent: "flex-start",
     alignItems: "center",
     borderTopRightRadius: 20,
-    backgroundColor: "#3B555D"
+    backgroundColor: colors.primaryBlue
   },
   textStyle: {
     fontSize: 20,
-    color: '#CA9D7C',
+    color: colors.primaryBeige,
     padding: 10,
     fontWeight: 'bold'
   },
   textStyle2: {
     fontSize: 15,
-    color: '#F5EEDC',
+    color: colors.secondaryBeige,
     padding: 0,
    
   },
   textStyle4: {
     fontSize: 17,
-    color: '#F5EEDC',
+    color: colors.secondaryBeige,
     padding: 5,
   },
   textStyle5: {
     fontSize: 17,
-    color: '#F5EEDC',
+    color: colors.secondaryBeige,
     paddingTop: 50,
   },
   flexBox: {
@@ -136,7 +138,7 @@ const styles = StyleSheet.create({
     paddingTop: 0,
   },
   hairline: {
-    backgroundColor: '#F5EEDC',
+    backgroundColor: colors.secondaryBeige,
     height: 3,
     width: 80,
     paddingTop: 0,
@@ -149,7 +151,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 65,
     borderRadius: 10,
     elevation: 3,
-    backgroundColor: '#F5EEDC',
+    backgroundColor: colors.secondaryBeige,
   },
   buttonPrimary: {
     alignItems: 'center',
@@ -158,14 +160,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 65,
     borderRadius: 10,
     elevation: 3,
-    backgroundColor: '#CA9D7C',
+    backgroundColor: colors.primaryBeige,
     
   },
   text: {
     fontSize: 13,
-   
     letterSpacing: 0.25,
-    color: '#363636',
+    color: colors.buttonTextColor,
   },
   
 });

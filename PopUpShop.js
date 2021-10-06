@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button, Dimensions, Image, TouchableWithoutFeed
 import Modal from "react-native-modalbox";
 import direction from './assets/direction.png';
 import dollar from './assets/dollar.png';
+import colors from './config/colors';
 
 
 const {width, height } = Dimensions.get("window");
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
   },
   content: {
     position: "absolute",
-    bottom: 80,
+    bottom: 100,
     width,
     height: 330,
     borderTopLeftRadius: 20,
