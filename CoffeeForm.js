@@ -4,6 +4,7 @@ import { StyleSheet, Text, View , CheckBox,
 import DropDownPicker from 'react-native-dropdown-picker';
 import { FlatList } from 'react-native-gesture-handler';
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
+import RadioButtonRN from 'radio-buttons-react-native';
 
 export default function CoffeeForm() {
 
@@ -16,6 +17,24 @@ export default function CoffeeForm() {
     ]);
     const [isSelected, setSelection] = useState(false);
     const [flexDirection, setflexDirection] = useState("column");
+
+    const floor = [
+        {
+            label: '-1'
+         },
+         {
+            label: '0'
+         },
+         {
+            label: '1'
+        },
+        {
+            label: '2'
+        },
+        {
+            label: '3'
+        }
+        ];
 
     return(
         <View style={styles.container}>
@@ -94,7 +113,11 @@ export default function CoffeeForm() {
                 <Text style={styles.label3}>
                     Välj våningsplan
                 </Text>
-
+                <RadioButtonRN
+                    style={styles.radio}
+                    data={floor}
+                    selectedBtn={(e) => console.log(e)}
+                />
                 <Text style={styles.label3}>
                     Sätt ut en pin på kartan
                 </Text>
@@ -144,6 +167,9 @@ const styles = StyleSheet.create({
     checkboxContainer: {
         flex: 1,
         backgroundColor: '#3B555D',
+        alignItems: 'center',
+    },
+    radio: {
         alignItems: 'center',
         justifyContent: 'center'
 
