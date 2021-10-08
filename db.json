@@ -1,0 +1,59 @@
+{
+    "list": [
+    {
+    "id": "1",
+    "title": "Unionen",
+    "verifiedIcon": "require('./assets/varning.png')",
+    "openingHours": "Rapporterat stängt 11:30",
+    "milkIcon": "require('./assets/milk.png')",
+    "oatMilkIcon": "require('./assets/godis.png')",
+    "candyIcon": "require('./assets/godis.png')",
+    "contestIcon": "require('./assets/godis.png')",
+    "productsIcon": "require('./assets/godis.png')",
+    "cookiesIcon": "require('./assets/godis.png')",
+    "location": "Teknikhuset, Plan 1, Sal 103"
+    },
+    {
+    "id": "2",
+    "title": "Sveriges Ingenjörer",
+    "verifiedIcon": "require('./assets/varning.png')",
+    "openingHours": "Senast verifierat 10:30",
+    "milkIcon": "require('./assets/milk.png')",
+    "oatMilkIcon": "require('./assets/godis.png')",
+    "candyIcon": "require('./assets/godis.png')",
+    "contestIcon": "require('./assets/godis.png')",
+    "productsIcon": "require('./assets/godis.png')",
+    "cookiesIcon": "require('./assets/godis.png')",
+    "location": "Teknikhuset, Plan 1, Sal 103"
+    },
+    {
+    "id": "3",
+    "title": "Academic Work",
+    "verifiedIcon": "require('./assets/varning.png')",
+    "openingHours": "Senast verifierat 09:00",
+    "milkIcon": "require('./assets/godis.png')",
+    "oatMilkIcon": "require('./assets/godis.png')",
+    "candyIcon": "require('./assets/godis.png')",
+    "contestIcon": "require('./assets/godis.png')",
+    "productsIcon": "require('./assets/godis.png')",
+    "cookiesIcon": "require('./assets/godis.png')",
+    "location": "Teknikhuset, Plan 1, Sal 103"
+    },
+    {
+    "id": "4",
+    "title": "Kårfiket Mitum",
+    "openingHours": "ÖPPET - Stänger 14:30",
+    "dollarIcon": "require('./assets/godis.png')",
+    "coffeePrice": "Kaffe från 12 kr",
+    "location": "Mit-huset, Plan 0, Sal"
+    },
+    {
+    "id": "5",
+    "title": "Café Universum",
+    "openingHours": "ÖPPET - Stänger 15:30",
+    "dollarIcon": "require('./assets/godis.png')",
+    "coffeePrice": "Kaffe från 12 kr",
+    "location": "Universum, Plan 2, Hörsal A"
+    }
+    ]
+}
