@@ -3,9 +3,6 @@ import { StyleSheet, Text, View, Button, Dimensions, Image, Pressable, Touchable
 import Modal from "react-native-modalbox";
 import direction from './assets/direction.png';
 import dollar from './assets/dollar.png';
-import milk from './assets/milk.png';
-import godis from './assets/godis.png';
-import varning from './assets/varning.png';
 import colors from './config/colors';
 import { color } from 'react-native-reanimated';
 
@@ -79,23 +76,23 @@ const PopUpShop2 = ({ show, close }) => {
       justifyContent: "flex-start",
       alignItems: "center",
       borderTopRightRadius: 20,
-      backgroundColor: "#3B555D"
+      backgroundColor: colors.primaryBlue
     },
     textStyle: {
       fontSize: 20,
-      color: '#CA9D7C',
+      color: colors.primaryBeige,
       padding: 10,
       fontWeight: 'bold'
     },
     textStyle2: {
       fontSize: 15,
-      color: '#F5EEDC',
+      color: colors.secondaryBeige,
       padding: 0,
      
     },
     textStyle4: {
       fontSize: 17,
-      color: '#F5EEDC',
+      color: colors.secondaryBeige,
       padding: 5,
     },
     flexBox: {
@@ -106,7 +103,7 @@ const PopUpShop2 = ({ show, close }) => {
       paddingTop: 30,
     },
     hairline: {
-      backgroundColor: '#F5EEDC',
+      backgroundColor: colors.secondaryBeige,
       height: 3,
       width: 80,
       paddingTop: 0,
