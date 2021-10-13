@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
-import { openDatabase } from 'expo-sqlite';
-import { Company} from './Company'
-
-
 
 
 export default function Homepage() {
     const [posts, setPosts] = useState(null);
 
-    useEffect(() => {
+    /*useEffect(() => {
         console.log("run !!!!!!!!!!!!!!!!!!");
         fetch('http://localhost:3000/list')
             .then(res => {
@@ -19,10 +15,10 @@ export default function Homepage() {
             .then(data => {
                 console.log(data),
                 setPosts(data)})
-    },[]);
+    },[]);*/
 
 
-    return (
+    /*return (
         <View style={styles.container}>
            {posts && <Text>{posts.location} </Text>}
 
@@ -31,7 +27,7 @@ export default function Homepage() {
       
             
       
-    );
+    );*/
 }
 
 const styles = StyleSheet.create({
