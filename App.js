@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Homepage from './Home';
 import Map from './Map';
+import ListView from './ListView';
 
 import { Platform, View } from 'react-native';
 import { AppLoading } from 'expo';
@@ -82,6 +83,11 @@ export default function App() {
           header: () => <Header headerDisplay="Lägg till kaffe" />
         }}
         />*/}
+
+        <Stack.Screen 
+          name="ListView"
+          component={ListView}
+        />
 
       </Stack.Navigator>
     </NavigationContainer>
