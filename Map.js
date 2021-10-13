@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity, Button } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
-import PopUpShop from './PopUpShop'
+import PopUpShop from './PopUpShop';
+import { getModal } from './PopUpFree';
 import PopUpFree from './PopUpFree'
 import Modal from "react-native-modalbox";
 import direction from './assets/direction.png';
@@ -14,7 +15,7 @@ import { ColorAndroid } from 'react-native/Libraries/StyleSheet/PlatformColorVal
 
 const {width, height } = Dimensions.get("window");
 
-export default function Map() {
+export default function Map({ navigation }) {
 
     const [modalVisible, setModalVisible] = useState(false);
 
@@ -62,7 +63,6 @@ export default function Map() {
                 <TouchableOpacity style={styles.buttonPrimary} >
                   <Text style={styles.text}>JA</Text>
                 </TouchableOpacity>
-                
               </View>
             </View>
           </Modal>
@@ -74,7 +74,7 @@ export default function Map() {
     return (
       
         <MapView
-        style={{ flex: 1 }}
+        style={styles.map}
         provider={PROVIDER_GOOGLE}
         showsUserLocation = {true}
         showsMyLocationButton
@@ -94,16 +94,30 @@ export default function Map() {
 
             <Marker 
             coordinate={{ latitude: 63.8190311, longitude: 20.307581}} 
-            onPress={() => alert("här kommer popup för köpkaffe")}>
+            onPress={() => {
+              navigation.navigate('PopUpShop', { 
+                state: true 
+              });
+            }}
+            >
                 <Image source={require('./assets/payIcon.png')} style={{ width: 35, height: 49 }}/>
                 
             </Marker>
 
-            <View style={styles.flexbox}>
-                <TouchableOpacity style={styles.coffeeButton} >
+            <View style={styles.buttonPosition}>
+                <TouchableOpacity 
+                onPress={() => {
+                  navigation.navigate('PopUpShop', { 
+                    state: true 
+                  });
+                }}
+                style={styles.coffeeButton} >
                     <Text style={styles.textCoffeeButton}>LÄGG TILL KAFFE</Text>
                 </TouchableOpacity>
             </View>
+
+                
+            
         </MapView>
       
     );
@@ -112,12 +126,6 @@ export default function Map() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#ffffff",
-      alignItems: "center",
-      justifyContent: "center"
-    },
     modalBox: {
       overflow: "hidden",
       alignItems: "center",
@@ -128,9 +136,9 @@ const styles = StyleSheet.create({
     },
     content: {
       position: "absolute",
-      bottom: 100,
+      bottom: 150,
       width,
-      height: 500,
+      height: 400,
       borderTopLeftRadius: 20,
       justifyContent: "flex-start",
       alignItems: "center",
@@ -198,9 +206,30 @@ const styles = StyleSheet.create({
       elevation: 3,
       backgroundColor: colors.primaryBeige,
     },
+    map: {
+      display: "flex",
+      flex: 1,
+      flexDirection: "row",
+      justifyContent: "center"
+    },
+    buttonPosition: {
+      display: "flex",
+      alignSelf: "flex-end",
+      //justifyContent: "center",
+      bottom: 20,
+      //top: 570
+    },
     coffeeButton: {
-        position: "absolute",
-        bottom: 100,
+        alignItems: "center",
+        //justifyContent: "flex-end",
+        //alignContent: "center",
+        // FLyttar enbart knappen till mitten, ej text. alignSelf: "center",
+        shadowColor: "#000000",
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        shadowOffset : { width: 0, height: 4},
+        padding: 20,
+        width: 200,
         paddingVertical: 19,
         paddingHorizontal: 5,
         borderRadius: 10,
@@ -208,13 +237,13 @@ const styles = StyleSheet.create({
         backgroundColor: colors.brown,
     },
     textCoffeeButton: {
-        fontSize: 13,
-      letterSpacing: 0.25,
+      fontSize: 13,
+      letterSpacing: 1.2,
       color: colors.secondaryBeige,
+      fontWeight: "600"
     },
     text: {
       fontSize: 13,
-     
       letterSpacing: 0.25,
       color: colors.buttonTextColor,
     },

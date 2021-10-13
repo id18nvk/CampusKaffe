@@ -77,13 +77,13 @@ export default function App() {
             header: () => <Header headerDisplay="Campuskaffe" />
           }}
         />
-        {/*<Stack.Screen 
+        <Stack.Screen 
           name="PopUpShop"
           component={PopUpShop}
         options={{
           header: () => <Header headerDisplay="PopUpShop" />
         }}
-      />*/}
+      />
         
         <Stack.Screen 
           name="PopUpFree"
