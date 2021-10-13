@@ -1283,6 +1283,16 @@
     "lodash.pick" "^4.4.0"
     "lodash.template" "^4.5.0"
 
+"@freakycoder/react-native-bounceable@>= 0.2.5":
+  "integrity" "sha512-J8WBOYxbm/um7SqXYneduZ08T5Kin9z+ixsS3wOLtpeNvKscuqmDEgsgefTYydeSIoI5dOfWmklnRRgu5i/8nA=="
+  "resolved" "https://registry.npmjs.org/@freakycoder/react-native-bounceable/-/react-native-bounceable-0.2.5.tgz"
+  "version" "0.2.5"
+
+"@freakycoder/react-native-switch-button@^0.1.1":
+  "integrity" "sha512-uKVOQg9ry4KTqjlPmC2NgjNsMV1ERjgscSH3n/IDbVrPXWsoaExeTA6JopNNQDG+TVBjC1P4P2+MoGrAojVh6A=="
+  "resolved" "https://registry.npmjs.org/@freakycoder/react-native-switch-button/-/react-native-switch-button-0.1.1.tgz"
+  "version" "0.1.1"
+
 "@hapi/address@2.x.x":
   "integrity" "sha512-QD1PhQk+s31P1ixsX0H0Suoupp3VMXzIVMSwobR3F3MSUO2YCV0B7xqLcUw/Bh8yuvd3LhpyqLQWTNcRmp6IdQ=="
   "resolved" "https://registry.npmjs.org/@hapi/address/-/address-2.1.4.tgz"

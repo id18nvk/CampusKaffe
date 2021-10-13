@@ -8,9 +8,12 @@ import colors from './config/colors';
 
 const {width, height } = Dimensions.get("window");
 
-export default function PopUpShop() {
+export default function PopUpShop({ route, navigation }) {
 
-  const [modalVisible, setModalVisible] = useState(false);
+  const { state } = route.params;
+
+  const [modalVisible, setModalVisible] = useState(state);
+  
 
   const getModal = () =>{
       return (
@@ -25,6 +28,12 @@ export default function PopUpShop() {
             
             <View style={{ height: 5, backgroundColor: '#F5EEDC' }}/>
             <View style={styles.hairline} />
+
+            <Button
+              title="till kartan"
+              onPress={() => navigation.jumpTo('Map')
+              }
+            />
 
             <Text style={styles.textStyle}>Kårfiket Mitum</Text>
             <Text style={styles.textStyle2}>ÖPPET - Stänger 14:30</Text>

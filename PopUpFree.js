@@ -15,7 +15,16 @@ export default function PopUpFree() {
 
   const [modalVisible, setModalVisible] = useState(false);
 
-  const getModal = () =>{
+  const company = 
+    {
+      name: 'Unionen',
+
+
+
+    }
+  
+
+  const getModal = (props) =>{
       return (
         <Modal
           entry="bottom"
@@ -29,7 +38,7 @@ export default function PopUpFree() {
             <View style={{ height: 5, backgroundColor: '#F5EEDC' }}/>
             <View style={styles.hairline} />
 
-            <Text style={styles.textStyle}>Unionen</Text>
+            <Text style={styles.textStyle}>{company.name}</Text>
 
             <View style={styles.flexBox2}>
               <Image style={styles.image} source={varning} style={{width: 19, height: 18 }}/>
@@ -74,6 +83,7 @@ export default function PopUpFree() {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -170,3 +180,4 @@ const styles = StyleSheet.create({
   },
   
 });
+
