@@ -1,75 +1,23 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity, Button } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
-import PopUpShop from './PopUpShop';
-import { getModal } from './PopUpFree';
-import PopUpFree from './PopUpFree'
 import Modal from "react-native-modalbox";
-import direction from './assets/direction.png';
-import dollar from './assets/dollar.png';
-import milk from './assets/milk.png';
-import godis from './assets/godis.png';
-import varning from './assets/varning.png';
 import colors from './config/colors';
 import { ColorAndroid } from 'react-native/Libraries/StyleSheet/PlatformColorValueTypesAndroid';
+import PopUpFree2 from './PopUpFree2';
+import PopUpShop2 from './PopUpShop2';
 
 const {width, height } = Dimensions.get("window");
 
 export default function Map({ navigation }) {
 
-    const [modalVisible, setModalVisible] = useState(false);
+    //const [modalVisible, setModalVisible] = useState(false);
 
-    const getModal = () =>{
-        return (
-          <Modal
-            entry="bottom"
-            backdropPressToClose={true}
-            isOpen={modalVisible}
-            style={styles.modalBox}
-            onClosed={() => setModalVisible(false)}
-          >
-            <View style={styles.content}>
-              
-              <View style={{ height: 5, backgroundColor: '#F5EEDC' }}/>
-              <View style={styles.hairline} />
-  
-              <Text style={styles.textStyle}>Unionen</Text>
-  
-              <View style={styles.flexBox2}>
-                <Image style={styles.image} source={varning} style={{width: 19, height: 18 }}/>
-                <View style={{ width: 5, backgroundColor: '#F5EEDC' }}/>
-                <Text style={styles.textStyle2}>Rapporterat stängt 11:30</Text>
-              </View>
-  
-              <View style={styles.flexBox}>
-                <Image style={styles.image} source={godis} style={{width: 37, height: 30 }}/>
-                <View style={{ width: 20, backgroundColor: '#F5EEDC' }}/>
-                <Image style={styles.image} source={milk} style={{width: 30, height: 35 }}/>
-                
-              </View>
-  
-              <View style={styles.flexBox}>
-                <Text style={styles.textStyle4}>Teknikhuset, Plan 1, Sal 103 </Text>
-                <Image source={direction} style={{width: 39, height: 39 }}/>
-              </View>
-  
-              <Text style={styles.textStyle5}>Delas det fortfarande ut kaffe här? </Text>
-  
-              <View style={styles.flexBox}>
-                <TouchableOpacity style={styles.buttonSecondary} >
-                  <Text style={styles.text}>NEJ</Text>
-                </TouchableOpacity>
-                <View style={{ width: 25, backgroundColor: '#F5EEDC' }}/>
-                <TouchableOpacity style={styles.buttonPrimary} >
-                  <Text style={styles.text}>JA</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </Modal>
-        );
-        
-    };
+    const [modal, setModal] = useState(false);
+    const Toggle = () => setModal(!modal);
 
+    const [modal2, setModal2] = useState(false);
+    const Toggle2 = () => setModal2(!modal2);
 
     return (
       
@@ -85,14 +33,22 @@ export default function Map({ navigation }) {
         longitudeDelta: 0.0020}}
         >
             
-            <Marker 
+            {/*<Marker 
             coordinate={{ latitude: 63.8195311, longitude: 20.307981}} 
             onPress={() =>  setModalVisible(true) } >
                 <Image source={require('./assets/freeIcon.png')} style={{ width: 35, height: 49 }}/>
             </Marker>
-            {getModal()}
+            {getModal()}*/}
 
             <Marker 
+            coordinate={{ latitude: 63.8195311, longitude: 20.307981}} 
+            onPress={() =>  Toggle() } >
+                <Image source={require('./assets/freeIcon.png')} style={{ width: 35, height: 49 }}/>
+            </Marker>
+
+            <PopUpFree2 show={modal} close={Toggle}/>
+
+            {/*<Marker 
             coordinate={{ latitude: 63.8190311, longitude: 20.307581}} 
             onPress={() => {
               navigation.navigate('PopUpShop', { 
@@ -102,18 +58,28 @@ export default function Map({ navigation }) {
             >
                 <Image source={require('./assets/payIcon.png')} style={{ width: 35, height: 49 }}/>
                 
+          </Marker>*/}
+
+            <Marker 
+            coordinate={{ latitude: 63.8190311, longitude: 20.307581}} 
+            onPress={() => Toggle2() }
+            >
+                <Image source={require('./assets/payIcon.png')} style={{ width: 35, height: 49 }}/>
             </Marker>
+
+            <PopUpShop2 show={modal2} close={Toggle2}/>
 
             <View style={styles.buttonPosition}>
                 <TouchableOpacity 
-                onPress={() => { navigation.navigate('CoffeeForm')}} style={styles.coffeeButton} >
+                style={styles.coffeeButton}
+                onPress={() => { navigation.navigate('CoffeeForm')}}  
+                >
                     <Text style={styles.textCoffeeButton}>LÄGG TILL KAFFE</Text>
                 </TouchableOpacity>
             </View>
-
-                
-            
+  
         </MapView>
+        
       
     );
 
@@ -128,17 +94,6 @@ const styles = StyleSheet.create({
       height,
       width,
       backgroundColor: "transparent"
-    },
-    content: {
-      position: "absolute",
-      bottom: 150,
-      width,
-      height: 400,
-      borderTopLeftRadius: 20,
-      justifyContent: "flex-start",
-      alignItems: "center",
-      borderTopRightRadius: 20,
-      backgroundColor: colors.primaryBlue
     },
     textStyle: {
       fontSize: 20,
