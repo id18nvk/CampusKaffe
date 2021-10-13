@@ -106,12 +106,7 @@ export default function Map({ navigation }) {
 
             <View style={styles.buttonPosition}>
                 <TouchableOpacity 
-                onPress={() => {
-                  navigation.navigate('PopUpShop', { 
-                    state: true 
-                  });
-                }}
-                style={styles.coffeeButton} >
+                onPress={() => { navigation.navigate('CoffeeForm')}} style={styles.coffeeButton} >
                     <Text style={styles.textCoffeeButton}>LÄGG TILL KAFFE</Text>
                 </TouchableOpacity>
             </View>

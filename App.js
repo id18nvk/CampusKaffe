@@ -94,14 +94,14 @@ export default function App() {
         }}
         />
 
-        {/* Lägg till "lägg till kaffe"
+        
         <Stack.Screen 
           name="CoffeeForm"
           component={CoffeeForm}
         options={{
           header: () => <Header headerDisplay="Lägg till kaffe" />
         }}
-        />*/}
+        />
 
         <Stack.Screen 
           name="ListView"

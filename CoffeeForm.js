@@ -7,7 +7,7 @@ import {useState} from "react";
 import CheckboxFormX from 'react-native-checkbox-form';
 import RadioButtonRN from 'radio-buttons-react-native';
 
-export default () => {
+export default ({ navigation }) => {
  
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);

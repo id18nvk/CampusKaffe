@@ -31,7 +31,7 @@ export default function PopUpShop({ route, navigation }) {
 
             <Button
               title="till kartan"
-              onPress={() => navigation.jumpTo('Map')
+              onPress={() => navigation.goBack()
               }
             />
 
