@@ -2,11 +2,7 @@ import React, {useState, Component} from 'react';
 import { StyleSheet, Text, View , CheckBox, 
     ScrollView} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
-import { FlatList } from 'react-native-gesture-handler';
-import { withSafeAreaInsets } from 'react-native-safe-area-context';
-import RadioButtonRN from 'radio-buttons-react-native';
 
-export default function CoffeeForm() {
 
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
@@ -126,52 +122,3 @@ export default function CoffeeForm() {
         </View>
     );
 };
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#3B555D',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    label1: {
-        color: '#CA9D7C',
-        fontSize: 20,
-        fontWeight: "bold",
-        textAlign: 'center',
-        paddingBottom: 28,
-    },
-    label2: {
-        color: '#F5EEDC',
-        fontSize: 17,
-        textAlign: 'left',
-        paddingBottom: 10,
-    },
-    label3: {
-        color: '#F5EEDC',
-        fontSize: 13,
-        textAlign: 'left',
-        paddingBottom: 13,
-    },
-    label: {
-        color: '#F5EEDC',
-        fontSize: 13,
-        textAlign: 'center',
-        paddingBottom: 21,
-    },
-    dropDown: {
-        backgroundColor: '#F5EEDC',
-        height: 40,
-        borderRadius: 4, 
-        width: "100%",
-    },
-    checkboxContainer: {
-        flex: 1,
-        backgroundColor: '#3B555D',
-        alignItems: 'center',
-    },
-    radio: {
-        alignItems: 'center',
-        justifyContent: 'center'
-
-    },
-})
