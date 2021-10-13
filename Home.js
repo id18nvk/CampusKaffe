@@ -1,24 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 
 export default function Homepage() {
-    return (
+    const [posts, setPosts] = useState(null);
+
+    /*useEffect(() => {
+        console.log("run !!!!!!!!!!!!!!!!!!");
+        fetch('http://localhost:3000/list')
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                console.log(data),
+                setPosts(data)})
+    },[]);*/
+
+
+    /*return (
+        <View style={styles.container}>
+           {posts && <Text>{posts.location} </Text>}
+
+
+        </View>
       
-            <MapView
-            style={{ flex: 1 }}
-            provider={PROVIDER_GOOGLE}
-            showsUserLocation
-            initialRegion={{
-            latitude: 63.8195311,
-            longitude: 20.3077981,
-            latitudeDelta: 0.00015,
-            longitudeDelta: 0.0020}}
-            />
-   
+            
       
-    );
+    );*/
 }
 
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: "#ffffff",
+      alignItems: "center",
+      justifyContent: "center"
+    }    
+  });
 
+  

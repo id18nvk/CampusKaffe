@@ -4,23 +4,22 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialIcons } from '@expo/vector-icons';
 import Homepage from './Home';
 import Map from './Map';
+import ListView from './ListView';
 
-import { Platform, useColorScheme, View } from 'react-native';
+import { Platform, View } from 'react-native';
 import { AppLoading } from 'expo';
 import Header from './Header';
 
 //import Alla sidor
 import { navigationRef } from './RootNavigation';
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 
 import colors from './config/colors';
 import PopUpShop from './PopUpShop';
 import PopUpFree from './PopUpFree';
 import CoffeeForm from './CoffeeForm';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 
 
@@ -29,31 +28,9 @@ const Tab = createBottomTabNavigator();
 
 function Home() {
   return (
-    <Tab.Navigator 
-      screenOptions={{ headerShown: false,  }} 
-      tabBarOptions={{
-        showLabel: false, 
-        activeTintColor: colors.primaryBeige,
-        activeBackgroundColor: colors.primaryBlue,
-        inactiveTintColor: colors.primaryBlue,
-        inactiveBackgroundColor: colors.primaryBeige}}>
-
-      <Tab.Screen name="Map" component={Map} options={{
-        tabBarIcon: ({focused}) =>(
-          <View>
-            <MaterialIcons name='map' size={30} style={{ color: focused ? colors.primaryBeige : colors.primaryBlue }} />
-          </View>
-        ),
-      }}/>
-
-      {/*OBS ÄNDRA TILL LISTA HÄR*/}
-      <Tab.Screen name="PopUpShop" component={PopUpShop} options={{
-        tabBarIcon: ({focused}) =>(
-          <View>
-            <MaterialIcons name='list' size={30} style={{ color: focused ? colors.primaryBeige : colors.primaryBlue }} />
-          </View>
-        ),
-      }}/>
+    <Tab.Navigator>
+      <Tab.Screen name="Map" component={Map} />
+      <Tab.Screen name="PopUpShop" component={PopUpShop} />
     </Tab.Navigator>
   );
 }
@@ -66,16 +43,21 @@ export default function App() {
       ref={navigationRef}
     >
       <Stack.Navigator 
-        initialRouteName="Home"
+        initialRouteName="Campuskaffe"
         headerMode="float"
       >
+        
+        <Stack.Screen 
+          name="Campuskaffe"
+          component={CoffeeForm}
+        options={{
+          header: () => <Header headerDisplay="Campuskaffe" />
+        }}
+        />
 
         <Stack.Screen 
           name="Home"
           component={Home}
-          options={{
-            header: () => <Header headerDisplay="Campuskaffe" />
-          }}
         />
         <Stack.Screen 
           name="PopUpShop"
@@ -88,6 +70,9 @@ export default function App() {
         <Stack.Screen 
           name="PopUpFree"
           component={PopUpFree}
+        options={{
+          header: () => <Header headerDisplay="PopUpShop" />
+        }}
         />
 
         {/* Lägg till "lägg till kaffe"
@@ -99,7 +84,20 @@ export default function App() {
         }}
         />*/}
 
+        <Stack.Screen 
+          name="ListView"
+          component={ListView}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.primaryBlue,
+  },
+});
+
+

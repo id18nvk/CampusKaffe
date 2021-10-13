@@ -5,7 +5,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "api": "npx json-server --watch db.json"
   },
   "dependencies": {
     "@freakycoder/react-native-switch-button": "^0.1.1",
@@ -14,6 +15,7 @@
     "@react-navigation/native": "^6.0.4",
     "@react-navigation/stack": "^6.0.9",
     "expo": "~42.0.1",
+    "expo-sqlite": "~9.2.1",
     "expo-status-bar": "~1.0.4",
     "react": "16.13.1",
     "react-dom": "^17.0.2",
