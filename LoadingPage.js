@@ -16,6 +16,7 @@ export default class LoadingPage extends Component{
     render(){
         return(
             <View style={styles.container}>
+                <Image source={require('./assets/loadGif2.gif')} />
                 {this.state.loaded ? <Text>HEJHEJ</Text> : <Text>Loading....</Text>}
             </View>
         );

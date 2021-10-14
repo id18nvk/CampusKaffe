@@ -131,7 +131,7 @@ export default class Guide extends Component {
           <Text style={styles.buttonText}>TILL APPEN</Text>
         </TouchableOpacity>
         </View>
-        
+
       </Swiper>
     )
   }
