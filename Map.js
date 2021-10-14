@@ -20,6 +20,7 @@ export default function Map({ navigation }) {
     const Toggle2 = () => setModal2(!modal2);
 
     return (
+      <View style ={{flex : 1}}>
       
         <MapView
         style={styles.map}
@@ -69,16 +70,18 @@ export default function Map({ navigation }) {
 
             <PopUpShop2 show={modal2} close={Toggle2}/>
 
-            <View style={styles.buttonPosition}>
+            
+  
+        </MapView>
+        <View style={styles.buttonPosition}>
                 <TouchableOpacity 
                 style={styles.coffeeButton}
                 onPress={() => { navigation.navigate('CoffeeForm')}}  
                 >
                     <Text style={styles.textCoffeeButton}>LÄGG TILL KAFFE</Text>
                 </TouchableOpacity>
-            </View>
-  
-        </MapView>
+        </View>
+      </View>
         
       
     );
@@ -163,11 +166,9 @@ const styles = StyleSheet.create({
       justifyContent: "center"
     },
     buttonPosition: {
-      display: "flex",
-      alignSelf: "flex-end",
-      //justifyContent: "center",
-      bottom: 20,
-      //top: 570
+      position: 'absolute',
+      bottom: 20, 
+      alignSelf: 'center' 
     },
     coffeeButton: {
         alignItems: "center",
