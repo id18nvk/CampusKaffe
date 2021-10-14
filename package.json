@@ -21,6 +21,7 @@
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.17.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-app-intro-slider": "^4.0.4",
     "react-native-checkbox-form": "^1.1.5",
     "react-native-dropdown-picker": "^5.1.28",
     "react-native-elements": "^3.4.2",
@@ -30,6 +31,8 @@
     "react-native-reanimated": "~2.2.0",
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "^3.8.0",
+    "react-native-swipe-gestures": "^1.0.5",
+    "react-native-swiper": "^1.6.0-rc.3",
     "react-native-vector-icons": "^8.1.0",
     "react-native-web": "^0.17.5"
   },
