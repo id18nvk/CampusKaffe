@@ -161,6 +161,7 @@ const PopUpFree2 = ({ show, close }) => {
       fontSize: 13,
       letterSpacing: 0.25,
       color: colors.buttonTextColor,
+      fontWeight: "600"
     },
     
   });

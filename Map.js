@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     },
     textCoffeeButton: {
       fontSize: 13,
-      letterSpacing: 1.2,
+      letterSpacing: 0.25,
       color: colors.secondaryBeige,
       fontWeight: "600"
     },

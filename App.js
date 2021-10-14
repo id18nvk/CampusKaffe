@@ -10,6 +10,7 @@ import ListView from './ListView';
 import { MaterialIcons } from '@expo/vector-icons';
 import { AppLoading } from 'expo';
 import Header from './Header';
+import HeaderBlank from './HeaderBlank';
 import { Platform, useColorScheme, View, SafeAreaView, StyleSheet, Text} from 'react-native';
 //import Alla sidor
 import { navigationRef } from './RootNavigation';
@@ -18,6 +19,7 @@ import PopUpShop from './PopUpShop';
 import PopUpFree from './PopUpFree';
 import CoffeeForm from './CoffeeForm';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import Guide from './Guide';
 
 
 const Stack = createStackNavigator();
@@ -62,10 +64,17 @@ export default function App() {
       ref={navigationRef}
     >
       <Stack.Navigator 
-        initialRouteName="Campuskaffe"
+        initialRouteName="Guide"
         headerMode="float"
       >
-        
+        <Stack.Screen 
+          name="Guide"
+          component={Guide}
+        options={{
+          header: () => <HeaderBlank headerDisplay="Guide" />
+        }}
+        />
+
         <Stack.Screen 
           name="Campuskaffe"
           component={Home}
