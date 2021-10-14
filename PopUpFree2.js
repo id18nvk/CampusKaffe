@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, Dimensions, Image, Pressable, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button, Dimensions, Image, Pressable, TouchableWithoutFeedback, TouchableOpacity , Alert} from 'react-native';
 import Modal from "react-native-modalbox";
 import direction from './assets/direction.png';
 import milk from './assets/milk.png';
@@ -8,6 +8,7 @@ import godis from './assets/godis.png';
 import varning from './assets/varning.png';
 import colors from './config/colors';
 import { color } from 'react-native-reanimated';
+import Toast from 'react-native-root-toast';
 
 const {width, height } = Dimensions.get("window");
 
@@ -19,6 +20,35 @@ const PopUpFree2 = ({ show, close }) => {
       name: 'Unionen',
 
     }
+    const createNoButtonAlert = () =>
+    Alert.alert(
+      "Bekräfta",
+      "Är du säker på att det inte delas ut kaffe här?",
+      [
+        {
+          text: "Avbryt",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel"
+        },
+        { text: "Bekräfta", onPress: () => {Toast.show('Tack för att du hjälper till att hålla Campuskaffe uppdaterad!');}
+        }
+      ]
+    );
+    
+    const createYesButtonAlert = () =>
+    Alert.alert(
+      "Bekräfta",
+      "Är du säker på att det delas ut kaffe här?",
+      [
+        {
+          text: "Avbryt",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel"
+        },
+        { text: "Bekräfta", onPress: () => {Toast.show('Tack för att du hjälper till att hålla Campuskaffe uppdaterad!')} }
+      ]
+
+    );
 
   return (
     <Modal
@@ -56,14 +86,13 @@ const PopUpFree2 = ({ show, close }) => {
       <Text style={styles.textStyle5}>Delas det fortfarande ut kaffe här? </Text>
 
       <View style={styles.flexBox}>
-        <TouchableOpacity style={styles.buttonSecondary} >
-          <Text style={styles.text}>NEJ</Text>
+        <TouchableOpacity style={styles.buttonSecondary} onPress={createNoButtonAlert}>
+          <Text style={styles.text} >NEJ</Text>
         </TouchableOpacity>
         <View style={{ width: 25, backgroundColor: '#F5EEDC' }}/>
-        <TouchableOpacity style={styles.buttonPrimary} >
+        <TouchableOpacity style={styles.buttonPrimary} onPress={createYesButtonAlert}>
           <Text style={styles.text}>JA</Text>
         </TouchableOpacity>
-        
       </View>
     </View>
   </Modal>
@@ -161,6 +190,7 @@ const PopUpFree2 = ({ show, close }) => {
       fontSize: 13,
       letterSpacing: 0.25,
       color: colors.buttonTextColor,
+      fontWeight: "600"
     },
     
   });
