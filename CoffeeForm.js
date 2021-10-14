@@ -1,11 +1,18 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TextInput, Button, Alert, SafeAreaView, ScrollView } from 'react-native';
+import { Text, View, Image, StyleSheet, TextInput, SafeAreaView, ScrollView, TouchableOpacity, CheckBox } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import Constants from 'expo-constants';
 import DropDownPicker from 'react-native-dropdown-picker';
 import {useState} from "react";
 import CheckboxFormX from 'react-native-checkbox-form';
 import RadioButtonRN from 'radio-buttons-react-native';
+import { MaterialIcons } from '@expo/vector-icons';
+
+import colors from './config/colors';
+import dollar from './assets/dollar.png';
+import milk from './assets/milk.png';
+import godis from './assets/godis.png';
+import varning from './assets/varning.png';
 
 export default ({ navigation }) => {
  
@@ -13,7 +20,9 @@ export default ({ navigation }) => {
   const [value, setValue] = useState(null);
 
     const [items, setItems] = useState([
+        {label: 'Ospecificerat', value: 'Ospecificerat'},
         {label: 'Academic Work', value: 'AcademicWork'},
+        {label: 'Professionals Nord', value: 'ProfessionalsNord'},
         {label: 'Sveriges Ingenjörer', value: 'SverigesIngenjorer'},
         {label: 'Unionen', value: 'Unionen'}
     ]);
@@ -37,7 +46,8 @@ export default ({ navigation }) => {
   const mockData = [
     {
         labelCheck: 'Mjölk',
-        value: 'Milk'
+        value: 'Milk',
+        
     },
     {
         labelCheck: 'Havremjölk',
@@ -78,8 +88,8 @@ const floor = [
   }
   ]; 
 
-  _onSelect = ( item ) => {
-      console.log(item);
+   const onSelect = ( item ) => {
+      console.log(mockData.label3);
     };
 
   console.log('errors', errors);
@@ -87,7 +97,11 @@ const floor = [
   return (
     
     <SafeAreaView style={styles.container}>
-       <ScrollView horizontal={false}>
+       <ScrollView horizontal={false} style={styles.scrollView}>
+       <TouchableOpacity style={styles.exit}
+                onPress={() => { navigation.navigate('Map')}} >
+                    <MaterialIcons name='close' size={30} style={{ color: colors.primaryBeige}} />
+                </TouchableOpacity>
                 <Text style={styles.label1}>
                     Lägg till gratiskaffe
                 </Text>
@@ -95,43 +109,80 @@ const floor = [
                     Vilka delar ut?
                 </Text>
                 <DropDownPicker style={styles.dropDown}
+                    placeholder="Välj företag eller förening"
+                    placeholderStyle={{
+                      color: colors.primaryBlue,
+                    }}
+                    color={colors.primaryBlue}
                     open={open}
                     value={value}
                     items={items}
                     setOpen={setOpen}
                     setValue={setValue}
                     setItems={setItems}
-                    containerStyle={{ backgroundColor: '#F5EEDC'}}
+                    searchable={true}
+                    searchPlaceholder="Sök"
+                    searchContainerStyle={{
+                      borderBottomColor: colors.primaryBlue
+                    }}
+                    searchTextInputStyle={{
+                      color: colors.primaryBlue,
+                      borderColor: colors.secondaryBeige
+                    }}
+                    searchPlaceholderTextColor="grey"
+                    dropDownContainerStyle={{ 
+                      backgroundColor: colors.secondaryBeige,
+                      borderTopColor: colors.primaryBlue,
+                      borderColor: colors.primaryBlue,
+                    }}
+                    listItemLabelStyle={{
+                      color: colors.primaryBlue,
+                    }}
+                    selectedItemLabelStyle={{
+                      color: colors.primaryBlue,
+                      fontWeight: "bold"
+                    }}
+                    arrowIconStyle={{
+                      tintColor: colors.primaryBlue
+                    }}
+                    tickIconStyle={{
+                      tintColor: colors.primaryBlue
+                    }}
+
                 />
-                <Text style={styles.labelkaffe}>
+                <Text style={styles.label2}>
                     Vad erbjuds mer än kaffe?
                 </Text>
-                <View style={{ marginVertical: 10, backgroundColor: "#3B555D" }} >
+                <View style={{ marginVertical: 10, backgroundColor: colors.primaryBlue }} >
                     <CheckboxFormX
-                        style={{ width: '100%', columns: 3,}}
                         dataSource={mockData}
                         itemShowKey="labelCheck"
-                        textStyle={{color: '#F5EEDC',
-                                    fontSize: 13,
-                                    textAlign: 'left',
-                                    paddingBottom: 13,}}
+                        style={{
+                          width: '100%'
+                        }}
+                        textStyle={{
+                          color: colors.secondaryBeige,
+                          fontSize: 13,
+                          textAlign: 'center',
+                        }}            
                         itemCheckedKey="RNchecked"
                         iconSize={16}
+                        iconColor={colors.primaryBeige}
                         formHorizontal={true}
-
                         labelHorizontal={false}
-                        onChecked={(item) => this._onSelect(item)}
-                        
+                        onChecked={(item) => onSelect(item)}     
                     />
                 </View>
 
 
-      <Text style={styles.labelvar}>Skriv in platsen</Text>
+      <Text style={styles.label2}>Var finns det?</Text>
       <Controller
         control={control}
         render={({field: { onChange, onBlur, value }}) => (
           <TextInput
             style={styles.input}
+            placeholder="Skriv in närmsta sal"
+            placeholderTextColor={colors.primaryBlue}
             onBlur={onBlur}
             onChangeText={value => onChange(value)}
             value={value}
@@ -145,18 +196,22 @@ const floor = [
                 </Text>
                 <RadioButtonRN
                     style={styles.radio}
+                    boxStyle={styles.radioBox}
+                    textStyle={styles.radioText}
+                    activeColor={colors.primaryBeige}
+                    deactiveColor={colors.secondaryBeige}
+                    circleSize={20}
                     data={floor}
                     selectedBtn={(e) => console.log(e)}
                 />
 
 
       <View style={styles.button}>
-        <Button
-          style={styles.buttonInner}
-          color
-          title="LÄGG TILL"
+        <TouchableOpacity style={styles.buttonPrimary}
           onPress={handleSubmit(onSubmit)}
-        />
+          onPress={() => { navigation.navigate('Map')}}>
+            <Text style={styles.textButtonPrimary}>LÄGG TILL</Text>
+          </TouchableOpacity>
       </View>
       </ScrollView>
     </SafeAreaView>
@@ -164,84 +219,87 @@ const floor = [
 };
 
 const styles = StyleSheet.create({
-  label: {
-    color: '#F5EEDC',
-    margin: 20,
-    marginLeft: 0,
-    fontSize: 13,
-  },
   button: {
     marginTop: 40,
-    color: 'white',
-    backgroundColor: '#CA9D7C',
-    borderRadius: 4,
-    width: 169,
-    height: 45,
     alignSelf: 'center',
+  },
+  buttonPrimary: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 19,
+    paddingHorizontal: 65,
+    borderRadius: 10,
+    elevation: 3,
+    backgroundColor: colors.primaryBeige,
+  },
+  textButtonPrimary: {
+    fontSize: 13,
+    letterSpacing: 1.2,
+    color: 'white',
+    fontWeight: "600"
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
     padding: 8,
-    backgroundColor: '#3B555D',
+    backgroundColor: colors.primaryBlue,
+  },
+  scrollView: {
+    padding: 20
   },
   input: {
-    backgroundColor: '#F5EEDC',
-    
+    backgroundColor: colors.secondaryBeige,
+    borderColor: colors.primaryBlue,
     height: 40,
     padding: 10,
-    borderRadius: 4,
-  },label1: {
-    color: '#CA9D7C',
+    borderRadius: 8,
+  },
+  label1: {
+    color: colors.primaryBeige,
     fontSize: 20,
     fontWeight: "bold",
     textAlign: 'center',
-    paddingBottom: 28,
-},
-label2: {
-    color: '#F5EEDC',
-    fontSize: 17,
-    textAlign: 'left',
-    paddingBottom: 10,
-},
-labelvar: {
-    color: '#F5EEDC',
-    fontSize: 17,
-    textAlign: 'left',
-    paddingTop: 48,
-},
-labelkaffe: {
-    color: '#F5EEDC',
-    fontSize: 17,
-    textAlign: 'left',
-    paddingBottom: 10,
-    paddingTop: 44,
-},
-label3: {
-    color: '#F5EEDC',
-    fontSize: 13,
-    textAlign: 'left',
-    paddingBottom: 13,
-},
-label: {
-    color: '#F5EEDC',
-    fontSize: 13,
-    textAlign: 'center',
-    paddingBottom: 21,
-},
-labelCheck: {
-    color: '#F5EEDC',
-    fontSize: 13,
-    textAlign: 'left',
-    paddingBottom: 13,
-},
-dropDown: {
-    backgroundColor: '#F5EEDC',
-    height: 40,
-    borderRadius: 4, 
-    borderColor: '#F5EEDC',
-    width: "100%",
-},
-
+  },
+  label2: {
+      color: colors.secondaryBeige,
+      fontSize: 17,
+      textAlign: 'left',
+      paddingBottom: 10,
+      paddingTop: 40,
+  },
+  label3: {
+      color: colors.secondaryBeige,
+      fontSize: 13,
+      textAlign: 'left',
+      paddingTop: 20,
+  },
+  dropDown: {
+      backgroundColor: colors.secondaryBeige,
+      height: 40,
+      borderColor: colors.primaryBlue,
+      width: "100%",
+  },
+  exit: {
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end'
+  },
+  radio: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  radioBox: {
+    width: "15%",
+    backgroundColor: colors.primaryBlue,
+    borderColor: colors.primaryBlue,
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  radioText: {
+    paddingTop: 10,
+    color: colors.secondaryBeige,
+    textAlign: 'center'
+  }
 });
