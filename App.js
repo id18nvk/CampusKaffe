@@ -20,6 +20,7 @@ import PopUpFree from './PopUpFree';
 import CoffeeForm from './CoffeeForm';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import Guide from './Guide';
+import LoadingPage from './LoadingPage';
 
 
 const Stack = createStackNavigator();
@@ -115,6 +116,11 @@ export default function App() {
         <Stack.Screen 
           name="ListView"
           component={ListView}
+        />
+
+        <Stack.Screen 
+          name="LoadingPage"
+          component={LoadingPage}
         />
 
       </Stack.Navigator>
