@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, Dimensions, Image, Pressable, TouchableWithoutFeedback, TouchableOpacity , Alert} from 'react-native';
 import Modal from "react-native-modalbox";
 import direction from './assets/direction.png';
-import dollar from './assets/dollar.png';
 import milk from './assets/milk.png';
 import godis from './assets/godis.png';
 import varning from './assets/varning.png';
