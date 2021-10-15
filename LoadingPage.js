@@ -6,7 +6,7 @@ export default class LoadingPage extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Image source={require('./assets/GifBack2.gif')}/>
+                <Image source={require('./assets/GifBack3.gif')}/>
             </View>
         );
     }
