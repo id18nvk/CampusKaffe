@@ -43,7 +43,7 @@ export default ({ navigation }) => {
       value: arg.nativeEvent.text,
     };
   };
-  const mockData = [
+  const mockData1 = [
     {
         labelCheck: 'Mjölk',
         value: 'Milk',
@@ -57,18 +57,20 @@ export default ({ navigation }) => {
         labelCheck: 'Godis',
         value: 'Candy'
     },
-    {
-        labelCheck: 'Tävling',
-        value: 'Competition'
-    },
-    {
-        labelCheck: 'Produkter',
-        value: 'Products'
-    },
-    {
-        labelCheck: 'Fika',
-        value: 'Fika'
-    },
+];
+const mockData2 = [
+  {
+      labelCheck: 'Tävling',
+      value: 'Competition'
+  },
+  {
+      labelCheck: 'Produkter',
+      value: 'Products'
+  },
+  {
+      labelCheck: 'Fika',
+      value: 'Fika'
+  },
 ];
 const floor = [
   {
@@ -89,7 +91,7 @@ const floor = [
   ]; 
 
    const onSelect = ( item ) => {
-      console.log(mockData.label3);
+      console.log(mockData1.value);
     };
 
   console.log('errors', errors);
@@ -153,20 +155,42 @@ const floor = [
                 <Text style={styles.label2}>
                     Vad erbjuds mer än kaffe?
                 </Text>
-                <View style={{ marginVertical: 10, backgroundColor: colors.primaryBlue }} >
+                <View style={{ 
+                  backgroundColor: colors.primaryBlue, 
+                  width: '100%',
+                  flexDirection: 'row'
+                  }} >
                     <CheckboxFormX
-                        dataSource={mockData}
+                        dataSource={mockData1}
                         itemShowKey="labelCheck"
                         style={{
-                          width: '100%'
+                          width: '100%',
                         }}
                         textStyle={{
                           color: colors.secondaryBeige,
                           fontSize: 13,
-                          textAlign: 'center',
                         }}            
                         itemCheckedKey="RNchecked"
-                        iconSize={16}
+                        iconSize={30}
+                        iconColor={colors.primaryBeige}
+                        formHorizontal={true}
+                        labelHorizontal={false}
+                        onChecked={(item) => onSelect(item)}     
+                    />
+                </View>
+                <View style={{ backgroundColor: colors.primaryBlue, width: '100%' }} >
+                    <CheckboxFormX
+                        dataSource={mockData2}
+                        itemShowKey="labelCheck"
+                        style={{
+                          width: '100%',
+                        }}
+                        textStyle={{
+                          color: colors.secondaryBeige,
+                          fontSize: 13,
+                        }}            
+                        itemCheckedKey="RNchecked"
+                        iconSize={30}
                         iconColor={colors.primaryBeige}
                         formHorizontal={true}
                         labelHorizontal={false}
@@ -246,7 +270,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primaryBlue,
   },
   scrollView: {
-    padding: 20
+    padding: 20,
   },
   input: {
     backgroundColor: colors.secondaryBeige,
