@@ -21,7 +21,7 @@ import CoffeeForm from './CoffeeForm';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import Guide from './Guide';
 import LoadingPage from './LoadingPage';
-
+import { useState, useEffect } from 'react'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -58,74 +58,87 @@ function Home() {
 }
 
 export default function App() {
-  //Lägg en if/else-sats här om något behöver laddas in
-  //innan appen kan starta 
-  return (
-    <NavigationContainer 
-      ref={navigationRef}
-    >
-      <Stack.Navigator 
-        initialRouteName="Guide"
-        headerMode="float"
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000)
+  }, [])
+
+  if (!loading){
+    return (
+      <NavigationContainer 
+        ref={navigationRef}
       >
-        <Stack.Screen 
-          name="Guide"
-          component={Guide}
-        options={{
-          header: () => <HeaderBlank headerDisplay="Guide" />
-        }}
+        <Stack.Navigator 
+          initialRouteName="Guide"
+          headerMode="float"
+        >
+          <Stack.Screen 
+            name="Guide"
+            component={Guide}
+          options={{
+            header: () => <HeaderBlank headerDisplay="Guide" />
+          }}
+          />
+  
+          <Stack.Screen 
+            name="Campuskaffe"
+            component={Home}
+          options={{
+            header: () => <Header headerDisplay="Campuskaffe" />
+          }}
+          />
+  
+          <Stack.Screen 
+            name="Home"
+            component={Home}
+          />
+          <Stack.Screen 
+            name="PopUpShop"
+            component={PopUpShop}
+          options={{
+            header: () => <Header headerDisplay="PopUpShop" />
+          }}
         />
-
-        <Stack.Screen 
-          name="Campuskaffe"
-          component={Home}
-        options={{
-          header: () => <Header headerDisplay="Campuskaffe" />
-        }}
-        />
-
-        <Stack.Screen 
-          name="Home"
-          component={Home}
-        />
-        <Stack.Screen 
-          name="PopUpShop"
-          component={PopUpShop}
-        options={{
-          header: () => <Header headerDisplay="PopUpShop" />
-        }}
-      />
-        
-        <Stack.Screen 
-          name="PopUpFree"
-          component={PopUpFree}
-        options={{
-          header: () => <Header headerDisplay="PopUpShop" />
-        }}
-        />
-
-        
-        <Stack.Screen 
-          name="CoffeeForm"
-          component={CoffeeForm}
-        options={{
-          header: () => <Header headerDisplay="Lägg till kaffe" />
-        }}
-        />
-
-        <Stack.Screen 
-          name="ListView"
-          component={ListView}
-        />
-
-        <Stack.Screen 
-          name="LoadingPage"
-          component={LoadingPage}
-        />
-
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+          
+          <Stack.Screen 
+            name="PopUpFree"
+            component={PopUpFree}
+          options={{
+            header: () => <Header headerDisplay="PopUpShop" />
+          }}
+          />
+  
+          
+          <Stack.Screen 
+            name="CoffeeForm"
+            component={CoffeeForm}
+          options={{
+            header: () => <Header headerDisplay="Lägg till kaffe" />
+          }}
+          />
+  
+          <Stack.Screen 
+            name="ListView"
+            component={ListView}
+          />
+  
+          <Stack.Screen 
+            name="LoadingPage"
+            component={LoadingPage}
+            options={{
+              header: () => <Header/>
+            }}
+          />
+  
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
+  else{
+    return(<LoadingPage />);
+  }
+  
 }
 
 const styles = StyleSheet.create({

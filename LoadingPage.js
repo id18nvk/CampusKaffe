@@ -3,14 +3,6 @@ import { Component } from "react";
 import { View, StyleSheet, Image } from 'react-native';
 
 export default class LoadingPage extends Component{
-    componentWillMount(){
-        setInterval(() =>{
-            this.props.navigation.navigate('Campuskaffe');
-        }, 2000)
-
-    }
-
-    //kommentar
     render(){
         return(
             <View style={styles.container}>
