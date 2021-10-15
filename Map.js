@@ -47,7 +47,6 @@ export default function Map({ navigation }) {
                 <Image source={require('./assets/freeIcon.png')} style={{ width: 35, height: 49 }}/>
             </Marker>
 
-            <PopUpFree2 show={modal} close={Toggle}/>
 
             {/*<Marker 
             coordinate={{ latitude: 63.8190311, longitude: 20.307581}} 
@@ -67,12 +66,14 @@ export default function Map({ navigation }) {
             >
                 <Image source={require('./assets/payIcon.png')} style={{ width: 35, height: 49 }}/>
             </Marker>
-
-            <PopUpShop2 show={modal2} close={Toggle2}/>
-
             
   
         </MapView>
+
+        <PopUpFree2 show={modal} close={Toggle}/>
+
+        <PopUpShop2 show={modal2} close={Toggle2}/>
+
         <View style={styles.buttonPosition}>
                 <TouchableOpacity 
                 style={styles.coffeeButton}
