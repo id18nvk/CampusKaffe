@@ -121,6 +121,9 @@ export default function App() {
         <Stack.Screen 
           name="LoadingPage"
           component={LoadingPage}
+          options={{
+            header: () => <HeaderBlank/>
+          }}
         />
 
       </Stack.Navigator>

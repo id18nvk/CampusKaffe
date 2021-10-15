@@ -127,7 +127,7 @@ export default class Guide extends Component {
           <Text style={styles.text}>Självklart kan du även se var kaffe finns att köpa om plånboken tillåter.</Text>
           <TouchableOpacity 
           style={styles.buttonPrimary}
-          onPress={() => this.props.navigation.navigate('Campuskaffe')} >
+          onPress={() => this.props.navigation.navigate('LoadingPage')} >
           <Text style={styles.buttonText}>TILL APPEN</Text>
         </TouchableOpacity>
         </View>

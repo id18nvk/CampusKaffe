@@ -1,23 +1,19 @@
 import React from 'react';
 import { Component } from "react";
-import LoadingService from './LoadingService';
-import { Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 
 export default class LoadingPage extends Component{
-    state= {
-        loaded: false
-    }
-    
-    constructor(){
-        super();
-        LoadingService.load(v => this.setState({loaded: true}));
+    componentWillMount(){
+        setInterval(() =>{
+            this.props.navigation.navigate('Campuskaffe');
+        }, 2000)
+
     }
 
     render(){
         return(
             <View style={styles.container}>
-                <Image source={require('./assets/loadGif2.gif')} />
-                {this.state.loaded ? <Text>HEJHEJ</Text> : <Text>Loading....</Text>}
+                <Image source={require('./assets/GifBack2.gif')}/>
             </View>
         );
     }
