@@ -9,10 +9,6 @@ import RadioButtonRN from 'radio-buttons-react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import colors from './config/colors';
-import dollar from './assets/dollar.png';
-import milk from './assets/milk.png';
-import godis from './assets/godis.png';
-import varning from './assets/varning.png';
 
 export default ({ navigation }) => {
  
