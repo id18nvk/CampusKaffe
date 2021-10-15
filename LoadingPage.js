@@ -10,6 +10,7 @@ export default class LoadingPage extends Component{
 
     }
 
+    //kommentar
     render(){
         return(
             <View style={styles.container}>
